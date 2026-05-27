@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duo Studio — Vanilla Dream</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+  <!-- External CSS Link -->
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <!-- Custom Cursor Elements -->
+  <div id="dot"></div>
+  <div id="ring"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">duo<i>studio</i></div>
+    <div class="nlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <button class="ncta" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Let's talk →</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-l">
+      <div class="tag"><div class="tdot"></div>IT students · Malaysia 🇲🇾</div>
+      <h1 class="h1">We build<br><span class="fade">websites</span><br><span class="br">that slay.</span></h1>
+      <p class="sub">Two IT students who are really good at art — building luxury websites for brands that refuse to be boring. Fast, custom, real results.</p>
+      <div class="btns">
+        <button class="b1" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Start a project ✦</button>
+        <button class="b2" onclick="document.querySelector('#work').scrollIntoView({behavior: 'smooth'})">See our work ↓</button>
+      </div>
+    </div>
+    
+    <div class="hero-r">
+      <div class="hcard">
+        <div class="duo-row">
+          <div class="avs">
+            <div class="av s">W</div>
+            <div class="av f">S</div>
+          </div>
+          <div class="dinfo">
+            <strong>Wyson & Shevi</strong>
+            <span>IT students · Web designers</span>
+          </div>
+          <div class="alive"><div class="adot"></div>Active</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="tagrow">
+          <span class="ht ht-br">✦ Luxury design</span>
+          <span class="ht ht-bk">Gen-Z energy</span>
+          <span class="ht ht-bl">Fast delivery</span>
+          <span class="ht ht-pk">100% custom</span>
+        </div>
+      </div>
+      <div class="qcard">
+        <p>"Your website is your most powerful sales tool — let's make it unforgettable."</p>
+        <small>— DUO STUDIO</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Marquee Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ti">Web Design<span class="sep">✦</span></span>
+      <span class="ti">E-Commerce<span class="sep">✦</span></span>
+      <span class="ti">Brand Identity<span class="sep">✦</span></span>
+      <span class="ti">Landing Pages<span class="sep">✦</span></span>
+      <span class="ti">Gen-Z Vibes<span class="sep">✦</span></span>
+      <span class="ti">Made in Malaysia<span class="sep">✦</span></span>
+      <span class="ti">Web Design<span class="sep">✦</span></span>
+      <span class="ti">E-Commerce<span class="sep">✦</span></span>
+      <span class="ti">Brand Identity<span class="sep">✦</span></span>
+      <span class="ti">Landing Pages<span class="sep">✦</span></span>
+      <span class="ti">Gen-Z Vibes<span class="sep">✦</span></span>
+      <span class="ti">Made in Malaysia<span class="sep">✦</span></span>
+    </div>
+  </div>
+
+  <!-- Capabilities Bento Grid -->
+  <section id="services">
+    <span class="stag">What we do</span>
+    <h2 class="stitle rv">Everything your brand needs to <em>shine online.</em></h2>
+    <div class="bento rv">
+      <div class="bc wide">
+        <span class="bnum">01</span><span class="bem">🌐</span>
+        <div class="bname">Custom Website Design</div>
+        <div class="bdesc">Scroll-stopping websites built from scratch — no templates, every detail made to convert.</div>
+        <div class="bchips"><span class="bchip">UI/UX</span><span class="bchip">Figma</span><span class="bchip">Responsive</span></div>
+        <div class="barr">→</div>
+      </div>
+      <div class="bc warm">
+        <span class="bnum">02</span><span class="bem">🛍️</span>
+        <div class="bname">E-Commerce</div>
+        <div class="bdesc">Shopify & WooCommerce that looks expensive.</div>
+        <div class="bchips"><span class="bchip">Shopify</span><span class="bchip">WooCommerce</span></div>
+        <div class="barr">→</div>
+      </div>
+      <div class="bc">
+        <span class="bnum">03</span><span class="bem">✨</span>
+        <div class="bname">Brand Identity</div>
+        <div class="bdesc">Logo, colours, fonts — the whole vibe.</div>
+        <div class="bchips"><span class="bchip">Logo</span><span class="bchip">Guidelines</span></div>
+        <div class="barr">→</div>
+      </div>
+      <div class="bc">
+        <span class="bnum">04</span><span class="bem">🚀</span>
+        <div class="bname">Landing Pages</div>
+        <div class="bdesc">High-converting pages for your launches.</div>
+        <div class="bchips"><span class="bchip">Fast build</span><span class="bchip">Conversion</span></div>
+        <div class="barr">→</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section id="work" style="padding-top:0;">
+    <span class="stag">Our work</span>
+    <h2 class="stitle rv">Two projects. <em>Zero templates.</em></h2>
+    <div class="pgrid rv">
+      <a href="https://www.slimparis.com.my" target="_blank" class="pcard-link" style="text-decoration: none; color: inherit; display: block;">
+        <div class="pcard">
+          <div class="pimg slimB"><div class="lgo">SlimParis</div></div>
+          <div class="pinfo">
+            <h4>SlimParis ↗</h4>
+            <p>Fashion & lifestyle brand website</p>
+            <span class="ptag">Web Design</span><span class="ptag">Shopify</span><span class="ptag">Branding</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rtpastry.netlify.app" target="_blank" class="pcard-link" style="text-decoration: none; color: inherit; display: block;">
+        <div class="pcard">
+          <div class="pimg slimB"><div class="lgo">SlimParis</div></div>
+          <div class="pinfo">
+            <h4>SlimParis ↗</h4>
+            <p>Fashion & lifestyle brand website</p>
+            <span class="ptag">Web Design</span><span class="ptag">Shopify</span><span class="ptag">Branding</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Team Section -->
+  <section id="about" style="padding-top:0;">
+    <span class="stag">Who we are</span>
+    <h2 class="stitle rv">Two IT students <em>who actually get design.</em></h2>
+    <div class="agrid rv">
+      <div class="acard">
+        <div class="aav br">W</div>
+        <h3>Wyson</h3>
+        <span class="arole">✦ UI/UX Lead</span>
+        <p>IT student with a passion for design. Leads all visuals and creative direction for every project.</p>
+        <div class="ask"><span>UI/UX</span><span>Figma</span><span>Branding</span><span>Motion</span></div>
+      </div>
+      <div class="acard">
+        <div class="aav bk">S</div>
+        <h3>Shevi</h3>
+        <span class="arole">✦ Fullstack Lead</span>
+        <p>IT student who builds fast, clean, working websites. No bugs, no excuses, no templates.</p>
+        <div class="ask"><span>React</span><span>Next.js</span><span>Shopify</span><span>SEO</span></div>
+      </div>
+      <div class="acard big">
+        <h3>Why us?</h3>
+        <span class="arole" style="color:rgba(255,255,255,.5);">The honest truth</span>
+        <p>"We're two uni students who genuinely love what we do. Affordable, hungry, and we give every project our full attention."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Grid -->
+  <section id="pricing" style="padding-top:0;">
+    <span class="stag">Pricing</span>
+    <h2 class="stitle rv">Simple pricing. <em>No surprises.</em></h2>
+    <div class="pricegrid rv">
+      <div class="price">
+        <div class="ptier">Starter</div>
+        <div class="pname">Essentials</div>
+        <div class="pamount">RM 1,500</div>
+        <div class="pperiod">one-time · fully custom</div>
+        <div class="pline"></div>
+        <ul class="plist">
+          <li>Up to 5 pages</li>
+          <li>Mobile responsive</li>
+          <li>Basic SEO</li>
+          <li>Contact form</li>
+          <li>2 revisions</li>
+          <li>7-day delivery</li>
+        </ul>
+        <button class="pbtn pb-out" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Get started</button>
+      </div>
+      <div class="price feat">
+        <div class="pbadge">⭐ Most Popular</div>
+        <div class="ptier">Best Value</div>
+        <div class="pname">Professional</div>
+        <div class="pamount">RM 3,500</div>
+        <div class="pperiod">one-time · premium</div>
+        <div class="pline"></div>
+        <ul class="plist">
+          <li>Up to 10 pages</li>
+          <li>Custom animations</li>
+          <li>Full SEO</li>
+          <li>Brand identity</li>
+          <li>Unlimited revisions</li>
+          <li>10-day delivery</li>
+        </ul>
+        <button class="pbtn pb-fill" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Get started</button>
+      </div>
+      <div class="price">
+        <div class="ptier">Enterprise</div>
+        <div class="pname">Full Studio</div>
+        <div class="pamount">Custom</div>
+        <div class="pperiod">tailored · ongoing</div>
+        <div class="pline"></div>
+        <ul class="plist">
+          <li>E-commerce store</li>
+          <li>Full brand overhaul</li>
+          <li>CMS integration</li>
+          <li>Monthly support</li>
+          <li>WhatsApp priority</li>
+          <li>Custom timeline</li>
+        </ul>
+        <button class="pbtn pb-out" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Let's talk</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <div class="cta" id="contact">
+    <span class="cta-t">✦ Let's work together</span>
+    <h2>Ready to build something <em>iconic?</em></h2>
+    <p class="cta-sub">Drop your email — we'll reply within 24 hours. No pitch deck, just a real chat.</p>
+    <div class="form">
+      <input class="inp" type="email" placeholder="your@email.com">
+      <button class="go">Let's go →</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="fl" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer;">duo<i>studio</i></div>
+    <div class="fc">© 2026 Duo Studio · Made in Malaysia 🇲🇾</div>
+    <div class="flinks">
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Email</a>
+    </div>
+  </footer>
+
+  <!-- External JS Script Link -->
+  <script src="portfolio.js"></script>
+</body>
+</html>
