@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duo Studio — Vanilla Dream</title>
+  <title>Duo Studio</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
   <!-- External CSS Link -->
   <link rel="stylesheet" href="portfolio.css">
 </head>
@@ -17,219 +22,325 @@
 
   <!-- Navigation -->
   <nav>
-    <div class="logo">duo<i>studio</i></div>
+    <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer;">duo<i>studio</i></div>
+    
     <div class="nlinks">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#about">About Us</a>
     </div>
     <button class="ncta" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Let's talk →</button>
+
+    <button class="hamburger" aria-label="Toggle Navigation Menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
   </nav>
+
+  <div class="mobile-menu">
+    <div class="menu-backdrop-glow"></div>
+    <div class="mobile-links">
+      <a href="#services" class="m-link">Services</a>
+      <a href="#work" class="m-link">Work</a>
+      <a href="#about" class="m-link">About Us</a>
+      <button class="m-cta" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Let's talk →</button>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <div class="hero">
+    
+    <!-- Left Column: Copy & Value Proposition -->
     <div class="hero-l">
-      <div class="tag"><div class="tdot"></div>IT students · Malaysia 🇲🇾</div>
       <h1 class="h1">We build<br><span class="fade">websites</span><br><span class="br">that slay.</span></h1>
-      <p class="sub">Two IT students who are really good at art — building luxury websites for brands that refuse to be boring. Fast, custom, real results.</p>
+      <p class="sub">We do not just build websites. We build the reason people take your brand seriously.</p>
       <div class="btns">
         <button class="b1" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Start a project ✦</button>
         <button class="b2" onclick="document.querySelector('#work').scrollIntoView({behavior: 'smooth'})">See our work ↓</button>
       </div>
     </div>
-    
+
+    <!-- Right Column: Separated Static Floating Canvas -->
     <div class="hero-r">
-      <div class="hcard">
-        <div class="duo-row">
-          <div class="avs">
-            <div class="av s">W</div>
-            <div class="av f">S</div>
+      <div class="sticker-stack">
+        
+        <!-- Project 1: SlimParis Snapshot -->
+        <div class="sticker stk-1">
+          <div class="stk-head"><span>project_01.html</span></div>
+          <div class="stk-body slimB">
+            <span class="stk-logo">SlimParis</span>
           </div>
-          <div class="dinfo">
-            <strong>Wyson & Shevi</strong>
-            <span>IT students · Web designers</span>
+        </div>
+
+        <!-- Project 2: RTPastry React Sheet -->
+        <div class="sticker stk-2">
+          <div class="stk-head" ><span>project_02.tsx</span></div>
+          <div class="stk-body rtpB">
+            <span class="stk-logo">RTPastry</span>
           </div>
-          <div class="alive"><div class="adot"></div>Active</div>
         </div>
-      </div>
-      <div class="hcard">
-        <div class="tagrow">
-          <span class="ht ht-br">✦ Luxury design</span>
-          <span class="ht ht-bk">Gen-Z energy</span>
-          <span class="ht ht-bl">Fast delivery</span>
-          <span class="ht ht-pk">100% custom</span>
+
+        <!-- Project 3a: JS Code Snippet -->
+        <div class="sticker js-box">
+          <div class="stk-head"><span>nexus.js</span></div>
+          <div class="stk-code-container">
+            <span class="c-purple">import</span> Core <span class="c-purple">from</span> <span class="c-green">'nexus-web'</span>;<br>
+            <span class="c-gold">initArchitecture</span>();
+          </div>
         </div>
-      </div>
-      <div class="qcard">
-        <p>"Your website is your most powerful sales tool — let's make it unforgettable."</p>
-        <small>— DUO STUDIO</small>
+
+        <!-- Project 3b: CSS Slay Code Snippet -->
+        <div class="sticker css-box">
+          <div class="stk-head"><span>slay.css</span></div>
+          <div class="stk-code-container">
+            <span class="c-blue">.brand-identity</span> {<br>
+            &nbsp;&nbsp;<span class="c-gold">vibe</span>: <span class="c-green">slay</span>;<br>
+            &nbsp;&nbsp;<span class="c-gold">templates</span>: <span class="c-purple">none</span>;<br>
+            }
+          </div>
+        </div>
+
+        <!-- Project 3c: Python Backend API Snippet -->
+        <div class="sticker py-box">
+          <div class="stk-head"><span>api.py</span></div>
+          <div class="stk-code-container">
+            <span class="c-purple">@app.get</span>(<span class="c-green">"/v1/slay"</span>)<br>
+            <span class="c-purple">def</span> <span class="c-gold">get_vibe</span>():<br>
+            &nbsp;&nbsp;<span class="c-purple">return</span> { <span class="c-green">"status"</span>: <span class="c-green">"iconic"</span> }
+          </div>
+        </div>
+
+        <!-- Project 4: Ribbon Tag Concept -->
+        <div class="sticker stk-4">
+          <span class="stk-tag-text">NexaStore (Figma) ✦</span>
+        </div>
+
+        <!-- Project 5: Figma Layout Matrix -->
+        <div class="sticker stk-5">
+          <div class="figma-header">
+            <div class="f-dot"></div><span>BlackByrd KL (Figma)</span>
+          </div>
+          <div class="mock-ui-bars"><div></div><div></div><div></div></div>
+        </div>
+
       </div>
     </div>
+
   </div>
 
   <!-- Text Marquee Ticker -->
   <div class="ticker-wrap">
     <div class="ticker-inner">
-      <span class="ti">Web Design<span class="sep">✦</span></span>
-      <span class="ti">E-Commerce<span class="sep">✦</span></span>
-      <span class="ti">Brand Identity<span class="sep">✦</span></span>
-      <span class="ti">Landing Pages<span class="sep">✦</span></span>
-      <span class="ti">Gen-Z Vibes<span class="sep">✦</span></span>
-      <span class="ti">Made in Malaysia<span class="sep">✦</span></span>
-      <span class="ti">Web Design<span class="sep">✦</span></span>
-      <span class="ti">E-Commerce<span class="sep">✦</span></span>
-      <span class="ti">Brand Identity<span class="sep">✦</span></span>
-      <span class="ti">Landing Pages<span class="sep">✦</span></span>
-      <span class="ti">Gen-Z Vibes<span class="sep">✦</span></span>
-      <span class="ti">Made in Malaysia<span class="sep">✦</span></span>
+      <span class="ticker-item">Web Design<span class="sep">✦</span></span>
+      <span class="ticker-item">E-Commerce<span class="sep">✦</span></span>
+      <span class="ticker-item">Brand Identity<span class="sep">✦</span></span>
+      <span class="ticker-item">Landing Pages<span class="sep">✦</span></span>
+      <span class="ticker-item">Gen-Z Vibes<span class="sep">✦</span></span>
+      <span class="ticker-item">Made in Malaysia<span class="sep">✦</span></span>
+      <span class="ticker-item">Web Design<span class="sep">✦</span></span>
+      <span class="ticker-item">E-Commerce<span class="sep">✦</span></span>
+      <span class="ticker-item">Brand Identity<span class="sep">✦</span></span>
+      <span class="ticker-item">Landing Pages<span class="sep">✦</span></span>
+      <span class="ticker-item">Gen-Z Vibes<span class="sep">✦</span></span>
+      <span class="ticker-item">Made in Malaysia<span class="sep">✦</span></span>
+      <span class="ticker-item">Web Design<span class="sep">✦</span></span>
+      <span class="ticker-item">E-Commerce<span class="sep">✦</span></span>
+      <span class="ticker-item">Brand Identity<span class="sep">✦</span></span>
+      <span class="ticker-item">Landing Pages<span class="sep">✦</span></span>
+      <span class="ticker-item">Gen-Z Vibes<span class="sep">✦</span></span>
+      <span class="ticker-item">Made in Malaysia<span class="sep">✦</span></span>
+      <span class="ticker-item">Web Design<span class="sep">✦</span></span>
+      <span class="ticker-item">E-Commerce<span class="sep">✦</span></span>
+      <span class="ticker-item">Brand Identity<span class="sep">✦</span></span>
+      <span class="ticker-item">Landing Pages<span class="sep">✦</span></span>
+      <span class="ticker-item">Gen-Z Vibes<span class="sep">✦</span></span>
+      <span class="ticker-item">Made in Malaysia<span class="sep">✦</span></span>
     </div>
   </div>
 
-  <!-- Capabilities Bento Grid -->
+  <!-- WHAT WE DO  -->
   <section id="services">
     <span class="stag">What we do</span>
-    <h2 class="stitle rv">Everything your brand needs to <em>shine online.</em></h2>
-    <div class="bento rv">
-      <div class="bc wide">
-        <span class="bnum">01</span><span class="bem">🌐</span>
-        <div class="bname">Custom Website Design</div>
-        <div class="bdesc">Scroll-stopping websites built from scratch — no templates, every detail made to convert.</div>
-        <div class="bchips"><span class="bchip">UI/UX</span><span class="bchip">Figma</span><span class="bchip">Responsive</span></div>
-        <div class="barr">→</div>
+    <h2 class="stitle rv">Premium services for <em>elevated brands</em></h2>
+    
+    <div class="luxury-services-grid rv">
+      <!-- Full Width Card: Custom Website Design -->
+      <div class="luxury-service-card full-width">
+        <div class="card-layout-full">
+          <div class="service-icon-box">
+            <i class="ti ti-world-www"></i>
+          </div>
+          <div class="service-content">
+            <div class="service-number">01</div>
+            <h3 class="service-title">Custom Website Design</h3>
+            <p class="service-description">Bespoke digital experiences crafted with obsessive attention to detail. We build websites that inspire.</p>
+            <div class="service-tags">
+              <span class="service-tag">UI/UX</span>
+              <span class="service-tag">Figma</span>
+              <span class="service-tag">Responsive</span>
+            </div>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
       </div>
-      <div class="bc warm">
-        <span class="bnum">02</span><span class="bem">🛍️</span>
-        <div class="bname">E-Commerce</div>
-        <div class="bdesc">Shopify & WooCommerce that looks expensive.</div>
-        <div class="bchips"><span class="bchip">Shopify</span><span class="bchip">WooCommerce</span></div>
-        <div class="barr">→</div>
-      </div>
-      <div class="bc">
-        <span class="bnum">03</span><span class="bem">✨</span>
-        <div class="bname">Brand Identity</div>
-        <div class="bdesc">Logo, colours, fonts — the whole vibe.</div>
-        <div class="bchips"><span class="bchip">Logo</span><span class="bchip">Guidelines</span></div>
-        <div class="barr">→</div>
-      </div>
-      <div class="bc">
-        <span class="bnum">04</span><span class="bem">🚀</span>
-        <div class="bname">Landing Pages</div>
-        <div class="bdesc">High-converting pages for your launches.</div>
-        <div class="bchips"><span class="bchip">Fast build</span><span class="bchip">Conversion</span></div>
-        <div class="barr">→</div>
+
+      <!-- Two Column Grid Wrapper -->
+      <div class="two-col-wrapper">
+        <!-- Brand Identity -->
+        <div class="luxury-service-card">
+          <div class="card-layout-normal">
+            <div class="service-icon-box">
+              <i class="ti ti-palette"></i>
+            </div>
+            <div class="service-content">
+              <div class="service-number">02</div>
+              <h3 class="service-title">Brand Identity</h3>
+              <p class="service-description">A complete visual language that captures your essence. Refined to perfection.</p>
+              <div class="service-tags">
+                <span class="service-tag">Logo</span>
+                <span class="service-tag">Guidelines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Landing Pages -->
+        <div class="luxury-service-card">
+          <div class="card-layout-normal">
+            <div class="service-icon-box">
+              <i class="ti ti-rocket"></i>
+            </div>
+            <div class="service-content">
+              <div class="service-number">03</div>
+              <h3 class="service-title">Landing Pages</h3>
+              <p class="service-description">High-impact pages designed to captivate and convert your audience.</p>
+              <div class="service-tags">
+                <span class="service-tag">Fast build</span>
+                <span class="service-tag">Conversion</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Portfolio Grid -->
-  <section id="work" style="padding-top:0;">
+<section id="work" style="padding-top:0;">
     <span class="stag">Our work</span>
-    <h2 class="stitle rv">Two projects. <em>Zero templates.</em></h2>
+    <h2 class="stitle rv">Bespoke builds. <em>Zero templates.</em></h2>
+
+    <p class="work-hint rv">Click any project to view the live site we built.</p>
+
     <div class="pgrid rv">
-      <a href="https://www.slimparis.com.my" target="_blank" class="pcard-link" style="text-decoration: none; color: inherit; display: block;">
+      
+      <a href="https://www.slimparis.com.my" target="_blank" class="pcard-link" aria-label="View SlimParis live website">
         <div class="pcard">
-          <div class="pimg slimB"><div class="lgo">SlimParis</div></div>
+          <div class="pimg img-slim">
+            <img src="images/SlimParis.png" alt="SlimParis Live Website Preview">
+            <div class="view-overlay">
+              <span>View live site ↗</span>
+            </div>
+          </div>
           <div class="pinfo">
             <h4>SlimParis ↗</h4>
-            <p>Fashion & lifestyle brand website</p>
-            <span class="ptag">Web Design</span><span class="ptag">Shopify</span><span class="ptag">Branding</span>
+            <p>Premium Body Sculpting & Wellness Platform Website</p>
+            <div class="tags-wrapper">
+              <span class="ptag">Web Design</span>
+              <span class="ptag">Branding</span>
+            </div>
           </div>
         </div>
       </a>
-      <a href="https://rtpastry.netlify.app" target="_blank" class="pcard-link" style="text-decoration: none; color: inherit; display: block;">
+
+      <a href="https://rtpastry.netlify.app" target="_blank" class="pcard-link" aria-label="View RTPastry live website">
         <div class="pcard">
-          <div class="pimg slimB"><div class="lgo">SlimParis</div></div>
+          <div class="pimg img-rt">
+            <img src="images/RTPastry.png" alt="RTPastry E-Commerce Website Preview">
+            <div class="view-overlay">
+              <span>View live site ↗</span>
+            </div>
+          </div>
           <div class="pinfo">
-            <h4>SlimParis ↗</h4>
-            <p>Fashion & lifestyle brand website</p>
-            <span class="ptag">Web Design</span><span class="ptag">Shopify</span><span class="ptag">Branding</span>
+            <h4>RTPastry ↗</h4>
+            <p>Luxury Bakery E-Commerce Concept Store</p>
+            <div class="tags-wrapper">
+              <span class="ptag">React</span>
+              <span class="ptag">Tailwind CSS</span>
+              <span class="ptag">E-Commerce</span>
+            </div>
           </div>
         </div>
       </a>
+
+      <a href="https://www.figma.com/proto/14rhyBUuVlEqo2nHV3RLxf/HCI?node-id=157-749&t=5IPx38cKzrSJtp6p-1" target="_blank" class="pcard-link" aria-label="View BlackByrd KL prototype">
+        <div class="pcard">
+          <div class="pimg img-blackbyrd">
+            <img src="images/BlackByrd KL.png" alt="BlackByrd KL Design Platform Preview">
+            <div class="view-overlay">
+              <span>View prototype ↗</span>
+            </div>
+          </div>
+          <div class="pinfo">
+            <h4>BlackByrd KL Prototype ↗</h4>
+            <p>Interactive Figma Visual & Design Exploration</p>
+            <div class="tags-wrapper">
+              <span class="ptag">UI/UX Design</span>
+              <span class="ptag">Figma Prototyping</span>
+              <span class="ptag">Visual Concept</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.figma.com/proto/yiMww3f1YKPaKt1hUWXniW/Nexa?node-id=0-1&t=dz1HUVcoHMRDGzrb-1" target="_blank" class="pcard-link" aria-label="View NexaStore prototype">
+        <div class="pcard">
+          <div class="pimg img-nexa">
+            <img src="images/NexaStore.png" alt="NexaStore Design System Preview">
+            <div class="view-overlay">
+              <span>View prototype ↗</span>
+            </div>
+          </div>
+          <div class="pinfo">
+            <h4>NexaStore ↗</h4>
+            <p>Digital Distribution Platform Prototyping & Design System</p>
+            <div class="tags-wrapper">
+              <span class="ptag">UI/UX Design</span>
+              <span class="ptag">Design System</span>
+              <span class="ptag">Art Direction</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
     </div>
   </section>
 
   <!-- About Team Section -->
   <section id="about" style="padding-top:0;">
     <span class="stag">Who we are</span>
-    <h2 class="stitle rv">Two IT students <em>who actually get design.</em></h2>
-    <div class="agrid rv">
-      <div class="acard">
-        <div class="aav br">W</div>
-        <h3>Wyson</h3>
-        <span class="arole">✦ UI/UX Lead</span>
-        <p>IT student with a passion for design. Leads all visuals and creative direction for every project.</p>
-        <div class="ask"><span>UI/UX</span><span>Figma</span><span>Branding</span><span>Motion</span></div>
+    <h2 class="stitle rv">A creative duo engineering <em>digital identities.</em></h2>
+    
+    <div class="abento-grid rv">
+      <!-- Bento Tile 1: Large Studio Manifesto -->
+      <div class="abento-card manifesto">
+        <span class="arole">Our Philosophy</span>
+        <h3>We refuse to build boring websites.</h3>
+        <p>We blend razor-sharp front-end engineering with high-end art direction to create digital spaces that leave an indelible mark. Zero templates, zero compromises—just immersive, bespoke experiences custom-tailored to position your brand at the absolute top tier of your industry.</p>
       </div>
-      <div class="acard">
-        <div class="aav bk">S</div>
-        <h3>Shevi</h3>
-        <span class="arole">✦ Fullstack Lead</span>
-        <p>IT student who builds fast, clean, working websites. No bugs, no excuses, no templates.</p>
-        <div class="ask"><span>React</span><span>Next.js</span><span>Shopify</span><span>SEO</span></div>
-      </div>
-      <div class="acard big">
-        <h3>Why us?</h3>
-        <span class="arole" style="color:rgba(255,255,255,.5);">The honest truth</span>
-        <p>"We're two uni students who genuinely love what we do. Affordable, hungry, and we give every project our full attention."</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Pricing Grid -->
-  <section id="pricing" style="padding-top:0;">
-    <span class="stag">Pricing</span>
-    <h2 class="stitle rv">Simple pricing. <em>No surprises.</em></h2>
-    <div class="pricegrid rv">
-      <div class="price">
-        <div class="ptier">Starter</div>
-        <div class="pname">Essentials</div>
-        <div class="pamount">RM 1,500</div>
-        <div class="pperiod">one-time · fully custom</div>
-        <div class="pline"></div>
-        <ul class="plist">
-          <li>Up to 5 pages</li>
-          <li>Mobile responsive</li>
-          <li>Basic SEO</li>
-          <li>Contact form</li>
-          <li>2 revisions</li>
-          <li>7-day delivery</li>
-        </ul>
-        <button class="pbtn pb-out" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Get started</button>
+      <!-- Bento Tile 2: Interaction & UI/UX Logic Focus -->
+      <div class="abento-card focus-card">
+        <div class="focus-icon"><i class="ti ti-code"></i></div>
+        <h3>Interaction & Logic</h3>
+        <p>Specializing in modern architecture, custom micro-interactions, and flawless responsive execution to make certain your digital platform feels incredibly tactile, fast, and memorable on every screen.</p>
       </div>
-      <div class="price feat">
-        <div class="pbadge">⭐ Most Popular</div>
-        <div class="ptier">Best Value</div>
-        <div class="pname">Professional</div>
-        <div class="pamount">RM 3,500</div>
-        <div class="pperiod">one-time · premium</div>
-        <div class="pline"></div>
-        <ul class="plist">
-          <li>Up to 10 pages</li>
-          <li>Custom animations</li>
-          <li>Full SEO</li>
-          <li>Brand identity</li>
-          <li>Unlimited revisions</li>
-          <li>10-day delivery</li>
-        </ul>
-        <button class="pbtn pb-fill" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Get started</button>
-      </div>
-      <div class="price">
-        <div class="ptier">Enterprise</div>
-        <div class="pname">Full Studio</div>
-        <div class="pamount">Custom</div>
-        <div class="pperiod">tailored · ongoing</div>
-        <div class="pline"></div>
-        <ul class="plist">
-          <li>E-commerce store</li>
-          <li>Full brand overhaul</li>
-          <li>CMS integration</li>
-          <li>Monthly support</li>
-          <li>WhatsApp priority</li>
-          <li>Custom timeline</li>
-        </ul>
-        <button class="pbtn pb-out" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">Let's talk</button>
+
+      <!-- Bento Tile 3: Visual Identity & Design System Focus -->
+      <div class="abento-card focus-card">
+        <div class="focus-icon"><i class="ti ti-layers-intersect"></i></div>
+        <h3>Visual Systems</h3>
+        <p>Crafting high-fidelity UI/UX prototypes, expansive branding layouts, and comprehensive design systems built to ground your visual identity with deep structural intention and artistic authority.</p>
       </div>
     </div>
   </section>
@@ -239,22 +350,90 @@
     <span class="cta-t">✦ Let's work together</span>
     <h2>Ready to build something <em>iconic?</em></h2>
     <p class="cta-sub">Drop your email — we'll reply within 24 hours. No pitch deck, just a real chat.</p>
-    <div class="form">
-      <input class="inp" type="email" placeholder="your@email.com">
-      <button class="go">Let's go →</button>
-    </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="fl" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer;">duo<i>studio</i></div>
-    <div class="fc">© 2026 Duo Studio · Made in Malaysia 🇲🇾</div>
-    <div class="flinks">
-      <a href="#">Instagram</a>
-      <a href="#">WhatsApp</a>
-      <a href="#">Email</a>
+<!-- Footer -->
+<footer style="position: relative; display: flex; justify-content: space-between; align-items: center; padding: 20px; box-sizing: border-box; min-height: 60px;">
+  
+  <div class="fl" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer; z-index: 2;">
+    duo<i>studio</i>
+  </div>
+  
+  <div class="fc" style="position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; z-index: 1;">
+    © 2026 Duo Studio · Made in Malaysia 
+  </div>
+  
+  <div class="flinks" style="display: flex; gap: 15px; align-items: center; z-index: 2;">
+    
+    <a href="#" aria-label="Instagram" style="color: white; display: flex; align-items: center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+
+    <a href="#" aria-label="TikTok" style="color: white; display: flex; align-items: center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.61-5.46-.14-1.92.54-3.84 1.83-5.32 1.15-1.32 2.82-2.17 4.59-2.34v3.91c-.81.08-1.6.45-2.18 1.05-.69.7-.93 1.76-.66 2.7.28.98 1.05 1.75 2.01 2.02 1.05.3 2.19.12 3.09-.43.92-.56 1.5-1.55 1.57-2.65.06-4.52.02-9.04.05-13.56z"/>
+      </svg>
+    </a>
+
+    <a href="#" aria-label="Email" style="color: white; display: flex; align-items: center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </a>
+
+    <a href="#" aria-label="Xiao Hong Shu" style="text-decoration: none; display: flex; align-items: center;">
+      <span style="color: #ffffff; font-size: 18px; font-weight: bold; font-family: sans-serif; letter-spacing: 0.5px;">小红书</span>
+    </a>
+
+  </div>
+</footer>
+
+<!-- Floating Social Widget Container -->
+  <div class="social-widget-container">
+
+    <!-- Floating Menu Panel -->
+    <div class="social-menu-panel">
+      <!-- TikTok -->
+      <a href="#" class="social-bubble-btn" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.61-5.46-.14-1.92.54-3.84 1.83-5.32 1.15-1.32 2.82-2.17 4.59-2.34v3.91c-.81.08-1.6.45-2.18 1.05-.69.7-.93 1.76-.66 2.7.28.98 1.05 1.75 2.01 2.02 1.05.3 2.19.12 3.09-.43.92-.56 1.5-1.55 1.57-2.65.06-4.52.02-9.04.05-13.56z"/></svg>
+      </a>
+      
+      <!-- Xiao Hong Shu (Text Block) -->
+      <a href="#" class="social-bubble-btn text-btn" aria-label="Xiao Hong Shu">
+        <span>小红书</span>
+      </a>
+      
+      <!-- Instagram -->
+      <a href="#" class="social-bubble-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" style="width: 26px; height: 26px; fill: none !important; stroke: currentColor !important; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round;">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:your-email@domain.com" class="social-bubble-btn mail-btn" aria-label="Email">
+        <svg viewBox="0 0 24 24" class="email-icon" style="fill: none !important; stroke: currentColor !important; stroke-width: 2px !important; stroke-linecap: round !important; stroke-linejoin: round !important;">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
     </div>
-  </footer>
+
+    <!-- Primary Floating Toggle Button -->
+    <button class="main-trigger-btn" aria-label="Toggle Social Menu">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+      </svg>
+    </button>
+    
+  </div>
 
   <!-- External JS Script Link -->
   <script src="portfolio.js"></script>
