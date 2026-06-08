@@ -1,3 +1,6 @@
+/* ==========================================================================
+   01. GLOBAL RESETS & CORE BASICS
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +17,10 @@ body {
   width: 100%;
 }
 
-/* ── CUSTOM CURSOR ── */
+
+/* ==========================================================================
+   02. CUSTOM MOUSE CURSOR
+   ========================================================================== */
 #dot {
   width: 10px;
   height: 10px;
@@ -38,7 +44,10 @@ body {
   opacity: .5;
 }
 
-/* ── ANIMATION & REVEAL UTILS ── */
+
+/* ==========================================================================
+   03. MARQUEE TEXT TICKER & ANIMATION UTILS
+   ========================================================================== */
 .ticker-wrap {
   overflow: hidden;
   padding: 12px 0;
@@ -72,7 +81,10 @@ section, #contact {
   scroll-margin-top: 100px;
 }
 
-/* ── NAVIGATION ── */
+
+/* ==========================================================================
+   04. NAVIGATION HEADER (DESKTOP & COMMON)
+   ========================================================================== */
 nav {
   position: sticky;
   top: 0;
@@ -121,7 +133,10 @@ nav {
   cursor: pointer;
 }
 
-/* ── HAMBURGER MENU CORE ── */
+
+/* ==========================================================================
+   05. HAMBURGER & MOBILE DRAWER MENU
+   ========================================================================== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -212,7 +227,10 @@ nav {
 }
 .mobile-menu.open .m-cta { opacity: 1; }
 
-/* ── HERO GRID LAYOUT ── */
+
+/* ==========================================================================
+   06. HERO SECTION & FLOATING STICKERS STACK
+   ========================================================================== */
 .hero {
   min-height: 88vh;
   display: grid;
@@ -389,7 +407,6 @@ nav {
   color: #c4875a; 
 }
 
-/* ── DESKTOP SPATIAL COORDINATES ── */
 .stk-1 { width: 220px; height: 120px; top: 2%; left: -5%; transform: rotate(-5deg); padding: 0; overflow: hidden; }
 .stk-2 { width: 210px; height: 130px; bottom: 0%; right: -5%; transform: rotate(5deg); padding: 0; overflow: hidden; }
 
@@ -463,157 +480,259 @@ nav {
 }
 .ticker-item .sep { color: #c4875a; }
 
-/* WHO ARE WE  */
-section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: border-box; }
-/* ── BENTO GRID ── */
-.abento-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  grid-template-rows: repeat(2, minmax(180px, auto));
-  gap: 24px;
-  margin-top: 46px;
-}
-
-.abento-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(254, 250, 246, 0.4) 100%);
-  border: 1px solid rgba(196, 135, 90, 0.18);
-  border-radius: 28px;
-  padding: 40px;
-  box-shadow: 0 4px 24px rgba(26, 20, 16, 0.02);
+/* ==========================================================================
+   07. WHAT WE DO (SERVICES CAROUSEL ENGINE) - TRANSPARENCY GRID CROP FIX
+   ========================================================================== */
+.services-header-row {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  width: 100%;
+}
+.services-header-row .stitle {
+  margin-bottom: 0 !important;
 }
 
-.abento-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(196, 135, 90, 0.4);
-  box-shadow: 0 20px 40px rgba(196, 135, 90, 0.08);
+.slider-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
 }
-
-.abento-card.manifesto {
-  grid-row: span 2;
-  background: #1a1410; 
-  border-color: transparent;
-  justify-content: center;
-}
-
-.abento-card.manifesto h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 3.8vw, 46px);
-  font-weight: 700;
-  line-height: 1.15;
-  color: #fefcf8; 
-  margin-bottom: 20px;
-  letter-spacing: -0.01em;
-}
-
-.abento-card.manifesto p {
-  font-size: 15px;
-  color: rgba(254, 252, 248, 0.65);
-  line-height: 1.75;
-  font-weight: 300;
-  max-width: 540px;
-}
-
-.abento-card.manifesto .arole {
-  color: #c4875a;
-  margin-bottom: 16px;
-}
-
-.abento-card.focus-card {
-  padding: 36px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px); 
-}
-
-.focus-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(196, 135, 90, 0.08);
-  border-radius: 12px;
+.ctrl-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 135, 90, 0.25);
+  background: #fefcf8;
+  color: #1a1410;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  color: #c4875a;
-  margin-bottom: 20px;
-  border: 1px solid rgba(196, 135, 90, 0.15);
+  font-size: 18px;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
-
-.abento-card.focus-card:hover .focus-icon {
-  background: #c4875a;
+.ctrl-btn:hover {
+  background: #1a1410;
   color: #fefcf8;
+  border-color: #1a1410;
   transform: scale(1.05);
 }
 
-.abento-card.focus-card h3 {
+.luxury-slider-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 36px;
+}
+.luxury-slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+.luxury-slide-item {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.luxury-service-card.full-variant {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  padding: 80px 60px;
+  background: linear-gradient(105deg, #efe6da 0%, #f7f3ed 35%, #ffffff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 36px;
+  align-items: center;
+  min-height: 540px;
+  position: relative;
+  box-shadow: 
+    0 10px 30px rgba(196, 135, 90, 0.02),
+    0 40px 90px rgba(26, 20, 16, 0.05);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.card-left-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  z-index: 5;
+}
+
+.card-right-showcase {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2;
+}
+
+.showcase-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ── PREVENT CHECKERED ALPHA GRID BLENDING ── */
+.device-showcase-item {
+  position: absolute;
+  overflow: hidden;
+  display: block;
+}
+
+.device-showcase-item img {
+  width: 100%;
+  height: 100%;
+  /* Zooms directly in to crop out the asset's flattened alpha background canvas */
+  object-fit: cover; 
+  display: block;
+}
+
+/* 1. Laptop Slot Frame & Crop Dimensions */
+.laptop-box {
+  width: 66%;
+  height: 220px;
+  bottom: 12%;
+  left: 0%;
+  z-index: 1;
+  filter: drop-shadow(0 20px 45px rgba(26, 20, 16, 0.12));
+}
+.laptop-box img {
+  object-position: 50% 43%; /* Fine-tunes positioning to reveal only the true hardware chassis */
+}
+
+/* 2. iPad Tablet Slot Frame & Crop Dimensions */
+.tablet-box {
+  width: 38%;
+  height: 230px;
+  bottom: 6%;
+  right: 14%;
+  z-index: 2;
+  filter: drop-shadow(-10px 15px 35px rgba(26, 20, 16, 0.15));
+}
+.tablet-box img {
+  object-position: 50% 50%;
+}
+
+/* 3. iPhone Smartphone Slot Frame & Crop Dimensions */
+.phone-box {
+  width: 16%;
+  height: 170px;
+  bottom: 2%;
+  right: 0%;
+  z-index: 3;
+  filter: drop-shadow(-12px 15px 30px rgba(26, 20, 16, 0.18));
+}
+.phone-box img {
+  object-position: 50% 50%;
+}
+
+/* ── MODULAR SLIDE CONTENT VARIANT LAYOUTS ── */
+.identity-showcase-split, .conversion-showcase-split {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.identity-bento-preview {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 440px;
+}
+.id-specimen-tile {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(26,20,16,0.03);
+  border: 1px solid rgba(196,135,90,0.1);
+  display: flex;
+  flex-direction: column;
+}
+.id-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(26,20,16,0.3);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.id-graphic-aa {
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-size: 72px;
+  color: #c4875a;
+  line-height: 1;
+  margin: auto;
+}
+.id-color-swatches {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: auto 0;
+}
+.id-color-swatches span {
+  height: 14px;
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+.conversion-metric-board {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 15px 40px rgba(26,20,16,0.04);
+  border: 1px solid rgba(196,135,90,0.1);
+}
+.metric-graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.metric-graph-header h4 {
+  font-size: 13px;
+  color: rgba(26,20,16,0.4);
+  font-weight: 600;
+}
+.metric-stat-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7ec186;
+  background: rgba(126,193,134,0.1);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.metric-huge-number {
+  font-size: 54px;
   font-weight: 700;
   color: #1a1410;
-  margin-bottom: 10px;
+  line-height: 1;
+  margin-bottom: 20px;
 }
-
-.abento-card.focus-card p {
-  font-size: 13.5px;
-  color: rgba(26, 20, 16, 0.55);
-  line-height: 1.65;
-  font-weight: 300;
+.metric-wave-line svg {
+  width: 100%;
+  height: 50px;
 }
-
-/* ── LUXURY SERVICES ── */
-.luxury-services-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 46px; }
-.two-col-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.luxury-service-card {
-  position: relative;
-  padding: 35px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 249, 245, 0.4) 100%);
-  border: 1px solid rgba(196, 135, 90, 0.2);
-  border-radius: 5px;
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-  overflow: hidden;
-}
-.luxury-service-card::before {
-  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
-  background: linear-gradient(90deg, #c4875a, transparent); transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.luxury-service-card:hover {
-  border-color: #c4875a; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 250, 248, 0.6) 100%);
-  box-shadow: 0 30px 80px rgba(196, 135, 90, 0.08), inset 0 0 1px rgba(196, 135, 90, 0.2); transform: translateY(-6px);
-}
-.luxury-service-card:hover::before { width: calc(100% - 70px); }
-
-.card-layout-full { display: grid; grid-template-columns: 65px 1fr 100px; gap: 30px; align-items: center; }
-.card-layout-normal { display: grid; grid-template-columns: 65px 1fr; gap: 25px; align-items: flex-start; }
-
-.service-icon-box { width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #c4875a; position: relative; transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink: 0; }
-.service-icon-box .ti { font-size: inherit; color: inherit; line-height: 1; display: inline-block; }
-.service-icon-box::before { content: ''; position: absolute; width: 100%; height: 100%; border: 1px solid rgba(196, 135, 90, 0.3); opacity: 0; transition: opacity 0.6s ease; }
-.luxury-service-card:hover .service-icon-box { transform: scale(1.2); }
-.luxury-service-card:hover .service-icon-box::before { opacity: 1; }
-
-.service-number { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 300; color: #c4875a; margin-bottom: 12px; letter-spacing: 1px; }
-.service-title { font-family: 'Playfair Display', serif; font-size: 35px; font-weight: 400; color: #1a1410; margin: 0 0 10px; letter-spacing: 0.3px; line-height: 1.2; }
-.service-description { font-size: 16px; line-height: 1.7; color: rgba(26, 20, 16, 0.6); margin: 0 0 14px; font-family: sans-serif; font-weight: 300; }
-.service-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-.service-tag { font-size: 11px; font-weight: 600; padding: 6px 14px; background: rgba(196, 135, 90, 0.1); color: #c4875a; border-radius: 20px; border: 1px solid rgba(196, 135, 90, 0.2); transition: all 0.3s ease; text-transform: capitalize; }
-.luxury-service-card:hover .service-tag { background: rgba(196, 135, 90, 0.15); border-color: #c4875a; }
-.service-arrow { font-size: 18px; color: #c4875a; opacity: 0.4; transition: all 0.4s ease; }
-.luxury-service-card:hover .service-arrow { opacity: 1; transform: translate(4px, -4px); }
 
 /* ==========================================================================
-   PORTFOLIO UNIFIED ENGINE (PERFECT EDGE-TO-EDGE GRID MATCH)
+   08. PORTFOLIO WORK PREVIEW CARDS
    ========================================================================== */
 .pgrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  align-items: stretch; /* Forces both cards in a row to match height perfectly */
+  align-items: stretch; 
 }
 .work-hint {
   margin-top: -18px;
@@ -646,11 +765,9 @@ section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: bor
   border-color: rgba(196, 135, 90, 0.35);
 }
 
-/* 1. Standardized image wrapper with a clean forced aspect ratio */
 .pimg {
   position: relative;
   width: 100%;
-  /* This forces ALL image boxes to be the exact same shape as NexaStore (around 16:10) */
   aspect-ratio: 1000 / 640; 
   background: #1a1410; 
   overflow: hidden;
@@ -658,23 +775,18 @@ section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: bor
   align-items: center;
   justify-content: center;
 }
-
-/* 2. Re-enabling top-anchored cover layout for uniform sizing */
 .pimg img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fills the box edge-to-edge with absolutely zero gaps */
-  object-position: top center; /* Anchors image to top so navigation bars stay perfect while the bottom crops */
+  object-fit: cover; 
+  object-position: top center; 
   display: block;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* Premium Zoom Hover Interaction */
 .pcard:hover .pimg img {
   transform: scale(1.04);
 }
 
-/* Overlay and Hover Effects */
 .pimg::before {
   content: "";
   position: absolute;
@@ -771,7 +883,12 @@ section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: bor
   margin-bottom: 36px !important;
 }
 
-/* ── ABOUT TEAM ── */
+
+/* ==========================================================================
+   09. ABOUT US & BENTO GRID TILES
+   ========================================================================== */
+section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: border-box; }
+
 .agrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .acard { background: #fff; border: 1px solid rgba(196,135,90,.1); border-radius: 22px; padding: 28px; box-shadow: 0 1px 12px rgba(26,20,16,.04); }
 .acard.big { grid-column: span 2; background: #c4875a; border-color: transparent; }
@@ -782,7 +899,99 @@ section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: bor
 .acard p { font-size: 13px; color: rgba(26, 20, 16, 0.45); line-height: 1.7; font-weight: 300; }
 .acard.big p { color: rgba(255,255,255,.8); font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; }
 
-/* ── CTA & FORM ── */
+.abento-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: repeat(2, minmax(180px, auto));
+  gap: 24px;
+  margin-top: 46px;
+}
+.abento-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(254, 250, 246, 0.4) 100%);
+  border: 1px solid rgba(196, 135, 90, 0.18);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(26, 20, 16, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.abento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 135, 90, 0.4);
+  box-shadow: 0 20px 40px rgba(196, 135, 90, 0.08);
+}
+.abento-card.manifesto {
+  grid-row: span 2;
+  background: #1a1410; 
+  border-color: transparent;
+  justify-content: center;
+}
+.abento-card.manifesto h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fefcf8; 
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.abento-card.manifesto p {
+  font-size: 15px;
+  color: rgba(254, 252, 248, 0.65);
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 540px;
+}
+.abento-card.manifesto .arole {
+  color: #c4875a;
+  margin-bottom: 16px;
+}
+.abento-card.focus-card {
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px); 
+}
+.focus-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(196, 135, 90, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #c4875a;
+  margin-bottom: 20px;
+  border: 1px solid rgba(196, 135, 90, 0.15);
+  transition: all 0.3s ease;
+}
+.abento-card.focus-card:hover .focus-icon {
+  background: #c4875a;
+  color: #fefcf8;
+  transform: scale(1.05);
+}
+.abento-card.focus-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1410;
+  margin-bottom: 10px;
+}
+.abento-card.focus-card p {
+  font-size: 13.5px;
+  color: rgba(26, 20, 16, 0.55);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+
+/* ==========================================================================
+   10. CONTACT CALL-TO-ACTION (CTA)
+   ========================================================================== */
 .cta { padding: 100px 24px; text-align: center; background: #1a1410; position: relative; overflow: hidden; width: 100%; }
 .cta::before { content: '✦'; position: absolute; font-family: 'Playfair Display', serif; font-size: 400px; color: rgba(196,135,90,.04); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
 .cta-t { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #c4875a; margin-bottom: 18px; display: block; }
@@ -794,7 +1003,10 @@ section { padding: 80px 52px; max-width: 1440px; margin: 0 auto; box-sizing: bor
 .inp::placeholder { color: rgba(254,252,248,.2); }
 .go { padding: 12px 22px; background: #c4875a; border: none; color: #fff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12px; border-radius: 0 100px 100px 0; cursor: pointer; }
 
-/* ── FOOTER ── */
+
+/* ==========================================================================
+   11. FOOTER SECTION
+   ========================================================================== */
 footer {
   background: #100d0a;
   padding: 40px 52px;
@@ -806,7 +1018,6 @@ footer {
   gap: 24px;
   position: relative;
 }
-
 .fl {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
@@ -814,11 +1025,9 @@ footer {
   font-style: italic;
   color: #c4875a;
   cursor: pointer;
-  flex: 1; /* Automatically balances layout distribution on desktop grids */
+  flex: 1; 
   text-align: left;
 }
-
-/* FIX: Absolute positioning removed completely to keep layout stacking pristine */
 .fc {
   font-size: 11px;
   color: rgba(254, 252, 248, 0.2);
@@ -826,15 +1035,13 @@ footer {
   text-align: center;
   flex: 1;
 }
-
 .flinks {
   display: flex;
   gap: 20px;
   align-items: center;
   flex: 1;
-  justify-content: flex-end; /* Snugs links tightly to the right side on desktop layout */
+  justify-content: flex-end; 
 }
-
 .flinks a {
   font-size: 11px;
   font-weight: 600;
@@ -844,13 +1051,153 @@ footer {
   display: flex;
   align-items: center;
 }
-
 .flinks a:hover {
   color: #c4875a;
 }
 
+
 /* ==========================================================================
-   PRODUCTION CORE RESPONSIVE MEDIA ENGINES
+   12. FLOATING SOCIAL WIDGET ENGINE
+   ========================================================================== */
+:root {
+  --widget-bg: #b58d63;      
+  --widget-border: #ffffff; 
+  --icon-color: #11100e;    
+}
+
+.social-widget-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 15px; 
+  z-index: 9999;
+  font-family: sans-serif;
+}
+.main-trigger-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--widget-bg);
+  border: 3px solid var(--widget-border); 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  padding: 0;
+  z-index: 2;
+}
+.main-trigger-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--widget-border); 
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.social-menu-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+              visibility 0.3s ease;
+  z-index: 1;
+  pointer-events: none; 
+}
+.social-widget-container.menu-is-active .social-menu-panel,
+.social-widget-container.active-click .social-menu-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto; 
+}
+.social-widget-container.menu-is-active .main-trigger-btn svg,
+.social-widget-container.active-click .main-trigger-btn svg {
+  transform: rotate(360deg);
+}
+
+.social-bubble-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--icon-color) !important; 
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.social-bubble-btn svg,
+.social-bubble-btn .email-icon {
+  width: 26px;
+  height: 26px;
+  fill: none !important;
+  stroke: currentColor !important; 
+  stroke-width: 2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  transition: stroke 0.3s ease !important;
+}
+.social-bubble-btn[aria-label="TikTok"] svg {
+  fill: currentColor !important;
+  stroke: none !important;
+}
+.social-bubble-btn[aria-label="Xiao Hong Shu"].text-btn span {
+  color: var(--icon-color);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  text-align: center;
+  line-height: 1.1;
+  word-break: break-all;
+  display: block;
+  max-width: 42px;
+  transition: color 0.3s ease;
+}
+
+.social-bubble-btn[aria-label="TikTok"]:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+.social-bubble-btn[aria-label="Xiao Hong Shu"]:hover {
+  background-color: #ff2442 !important;
+  transform: scale(1.1);
+}
+.social-bubble-btn[aria-label="Xiao Hong Shu"]:hover span {
+  color: #ffffff !important;
+}
+.social-bubble-btn[aria-label="Instagram"]:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeeb3 90%) !important;
+  color: #ffffff !important; 
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(214, 36, 159, 0.35);
+}
+.social-bubble-btn[aria-label="Instagram"]:hover svg {
+  stroke-width: 2.2px !important;
+}
+.social-bubble-btn.mail-btn:hover {
+  background-color: #0078d4 !important;
+  color: #ffffff !important; 
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 120, 212, 0.35);
+}
+.social-bubble-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================================
+   13. STYLES FOR TABLETS & MEDIUM DISPLAYS (MAX-WIDTH: 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
   nav { padding: 16px 24px; }
@@ -893,76 +1240,86 @@ footer {
   .service-title { font-size: 24px !important; margin-top: 6px !important; }
   .service-description { font-size: 14px !important; max-width: 320px; margin: 0 auto 12px !important; }
 
-  /* ── MOBILE FLOATING STICKER TYPOGRAPHY REFINEMENTS ── */
-  
-  /* 1. Downsize the inner brand text components inside the project canvas windows */
   .stk-body .stk-logo {
-    font-size: 22px !important; /* Drops down from 30px so it fits the narrow container cleanly */
+    font-size: 22px !important; 
     letter-spacing: -0.02em !important;
   }
-
-  /* 2. Adjust the code snippets so the monospace lines don't break awkwardly */
   .stk-code-container {
-    font-size: 9px !important; /* Slightly crisper baseline text size for mobile panels */
+    font-size: 9px !important; 
     line-height: 1.5 !important;
   }
 
-  /* ── FORCED MOBILE FOOTER RE-STACK ENGINE ── */
+  /* Slider Frame Mask Layout Media Queries */
+  .services-header-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+  .luxury-service-card.full-variant {
+    grid-template-columns: 1fr !important;
+    padding: 36px 24px !important;
+    gap: 36px !important;
+    text-align: center !important;
+  }
+  .card-left-info {
+    align-items: center !important;
+  }
+  .card-right-showcase {
+    height: 280px !important;
+  }
+  .laptop-frame { width: 85%; height: 190px; top: 10%; }
+  .tablet-frame { width: 42%; height: 140px; bottom: 12%; right: 5%; }
+  .phone-frame { width: 22%; height: 110px; bottom: 5%; right: -2%; }
+
+  /* Mobile Footer Structural Core */
   footer {
     padding: 50px 24px !important;
     display: flex !important;
-    flex-direction: column !important; /* Converts desktop row layout to upward stacking columns */
+    flex-direction: column !important; 
     justify-content: center !important;
     align-items: center !important;
     gap: 0 !important; 
     text-align: center !important;
   }
-
-  /* 1. FORCE BRAND LOGO TO SIT AT THE TOP ROW CONTAINER */
   footer .fl {
     display: block !important;
     position: static !important;
     order: 1 !important;
     font-size: 16px !important;
-    margin: 0 auto 16px auto !important; /* Pristine vertical separation gap */
+    margin: 0 auto 16px auto !important; 
     text-align: center !important;
     transform: none !important;
     flex: none !important;
     width: 100% !important;
   }
-
-  /* 2. FORCE COPYRIGHT TEXT TO SIT DIRECTLY BENEATH THE LOGO */
   footer .fc {
     display: block !important;
-    position: static !important; /* STOPS ABSOLUTE HOVER OVERLAPS ENTIRELY */
+    position: static !important; 
     order: 2 !important;
     font-size: 10px !important;
     white-space: normal !important;
     line-height: 1.4 !important;
     color: rgba(254, 252, 248, 0.15) !important;
-    margin: 0 auto 24px auto !important; /* Generous breathing gap before icons load */
+    margin: 0 auto 24px auto !important; 
     transform: none !important;
     text-align: center !important;
     flex: none !important;
     width: 100% !important;
   }
-
-  /* 3. FORCE HORIZONTAL SOCIAL LINKS TO SIT AT THE VERY BOTTOM ROW */
   footer .flinks {
     display: flex !important;
     position: static !important;
     order: 3 !important;
-    flex-direction: row !important; /* Keeps icons lined up horizontally side-by-side */
+    flex-direction: row !important; 
     justify-content: center !important;
     align-items: center !important;
-    gap: 20px !important; /* Opens horizontal breathing space between links */
+    gap: 20px !important; 
     margin: 0 auto !important;
     transform: none !important;
     flex: none !important;
     width: 100% !important;
   }
-
-  /* Mobile footer image icons sizing adjustments */
   .flinks a svg {
     width: 18px !important;
     height: 18px !important;
@@ -975,13 +1332,16 @@ footer {
   }
 }
 
+
+/* ==========================================================================
+   14. STYLES FOR SMARTPHONES (MAX-WIDTH: 480px)
+   ========================================================================== */
 @media (max-width: 480px) {
   .hero-r { max-width: 290px; height: 640px; }
   .stk-1, .stk-2, .stk-5 { width: 135px; }
   .js-box, .css-box, .py-box { width: 150px !important; }
   .h1 { font-size: 70px; }
 
-  /* ── COMPACT FLOATING WIDGET SETTINGS ON SMARTPHONES ── */
   .social-widget-container {
     bottom: 16px !important;
     right: 16px !important;
@@ -1016,213 +1376,11 @@ footer {
   }
 }
 
+
+/* ==========================================================================
+   15. HARDWARE ACCELERATION TOUCH SCREEN RESETS
+   ========================================================================== */
 @media (pointer: coarse) {
   body { cursor: auto; }
   #dot, #ring { display: none !important; }
-}
-
-/* ==========================================================================
-   PRODUCTION FLOATING SOCIAL WIDGET ENGINE (FLUID RESPONSIVE ENGINE)
-   ========================================================================== */
-:root {
-  --widget-bg: #b58d63;      
-  --widget-border: #ffffff; 
-  --icon-color: #11100e;    
-}
-
-.social-widget-container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  gap: 15px; 
-  z-index: 9999;
-  font-family: sans-serif;
-}
-
-/* Base Main Action Trigger Circle */
-.main-trigger-btn {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: var(--widget-bg);
-  border: 3px solid var(--widget-border); 
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-  padding: 0;
-  z-index: 2;
-}
-
-.main-trigger-btn svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--widget-border); 
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-}
-
-.social-menu-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px) scale(0.9);
-  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
-              visibility 0.3s ease;
-  z-index: 1;
-  pointer-events: none; 
-}
-
-.social-widget-container.menu-is-active .social-menu-panel,
-.social-widget-container.active-click .social-menu-panel {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto; 
-}
-
-.social-widget-container.menu-is-active .main-trigger-btn svg,
-.social-widget-container.active-click .main-trigger-btn svg {
-  transform: rotate(360deg);
-}
-
-/* Base Desktop Dimensions */
-.social-bubble-btn {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--icon-color) !important; 
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.social-bubble-btn svg,
-.social-bubble-btn .email-icon {
-  width: 26px;
-  height: 26px;
-  fill: none !important;
-  stroke: currentColor !important; 
-  stroke-width: 2px !important;
-  stroke-linecap: round !important;
-  stroke-linejoin: round !important;
-  transition: stroke 0.3s ease !important;
-}
-
-.social-bubble-btn[aria-label="TikTok"] svg {
-  fill: currentColor !important;
-  stroke: none !important;
-}
-
-.social-bubble-btn[aria-label="Xiao Hong Shu"].text-btn span {
-  color: var(--icon-color);
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: -0.2px;
-  text-align: center;
-  line-height: 1.1;
-  word-break: break-all;
-  display: block;
-  max-width: 42px;
-  transition: color 0.3s ease;
-}
-
-/* --- HOVER EFFECTS --- */
-.social-bubble-btn[aria-label="TikTok"]:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  transform: scale(1.1);
-}
-.social-bubble-btn[aria-label="Xiao Hong Shu"]:hover {
-  background-color: #ff2442 !important;
-  transform: scale(1.1);
-}
-.social-bubble-btn[aria-label="Xiao Hong Shu"]:hover span {
-  color: #ffffff !important;
-}
-.social-bubble-btn[aria-label="Instagram"]:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeeb3 90%) !important;
-  color: #ffffff !important; 
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(214, 36, 159, 0.35);
-}
-.social-bubble-btn[aria-label="Instagram"]:hover svg {
-  stroke-width: 2.2px !important;
-}
-.social-bubble-btn.mail-btn:hover {
-  background-color: #0078d4 !important;
-  color: #ffffff !important; 
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 120, 212, 0.35);
-}
-.social-bubble-btn:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* ==========================================================================
-   DYNAMIC MOBILE RESPONSIVE SCALING BREAKPOINTS
-   ========================================================================== */
-@media (max-width: 480px) {
-  /* 1. Snug the overall container tighter to the screen padding limits */
-  .social-widget-container {
-    bottom: 16px !important;
-    right: 16px !important;
-    gap: 8px !important; /* Reduces space between open menu panel and main bubble */
-  }
-  
-  /* 2. Scale down the primary chat message action button */
-  .main-trigger-btn {
-    width: 52px !important;
-    height: 52px !important;
-    border-width: 2px !important;
-  }
-  
-  .main-trigger-btn svg {
-    width: 22px !important;
-    height: 22px !important;
-  }
-
-  /* Tighten up the gap between individual pop-up social media bubbles */
-  .social-menu-panel {
-    gap: 8px !important;
-  }
-
-  /* 3. PERFECT MOBILE SIZE LOOPS: Scale social bubbles way down */
-  .social-bubble-btn {
-    width: 40px !important;   /* Hard scale reduction for tight screens */
-    height: 40px !important;  /* Keeps them perfectly circular */
-    min-width: 40px !important;
-    min-height: 40px !important; 
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* 4. Downsize inner tracking vector strokes proportionally */
-  .social-bubble-btn svg,
-  .social-bubble-btn .email-icon {
-    width: 18px !important;
-    height: 18px !important;
-    min-width: 18px !important;
-    min-height: 18px !important;
-    stroke-width: 2px !important;
-  }
-
-  /* 5. Custom typography clamp mapping for Xiao Hong Shu text limits */
-  .social-bubble-btn[aria-label="Xiao Hong Shu"].text-btn span {
-    font-size: 9px !important;
-    max-width: 32px !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.3px !important;
-    line-height: 1 !important;
-  }
 }

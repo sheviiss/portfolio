@@ -167,4 +167,67 @@ document.addEventListener('DOMContentLoaded', () => {
     widgetContainer.classList.remove('menu-is-active');
   });
 
+  /* ── LUXURY AUTO-SCROLL PAUSE-ON-HOVER SLIDER MODULE ── */
+  const track = document.querySelector('.luxury-slider-track');
+  const slides = document.querySelectorAll('.luxury-slide-item');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const viewportFrame = document.querySelector('.luxury-slider-viewport');
+  
+  if (track && slides.length > 0) {
+    let currentIndex = 0;
+    const maxSlides = slides.length;
+    let autoScrollInterval = null;
+    const scrollIntervalDuration = 4000; // Time step before advancing slide automatically (4s)
+
+    // Main translate transition executor function
+    const updateSliderPosition = () => {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+
+    const moveToNextSlide = () => {
+      currentIndex = (currentIndex + 1) % maxSlides;
+      updateSliderPosition();
+    };
+
+    const moveToPrevSlide = () => {
+      currentIndex = (currentIndex - 1 + maxSlides) % maxSlides;
+      updateSliderPosition();
+    };
+
+    // Engine Timer Management Controls
+    const startAutoScroll = () => {
+      if (!autoScrollInterval) {
+        autoScrollInterval = setInterval(moveToNextSlide, scrollIntervalDuration);
+      }
+    };
+
+    const stopAutoScroll = () => {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+      }
+    };
+
+    // Explicit Action Event Hooks
+    nextBtn.addEventListener('click', () => {
+      stopAutoScroll();
+      moveToNextSlide();
+      startAutoScroll(); // Safely cycle interval loop timer context back up
+    });
+
+    prevBtn.addEventListener('click', () => {
+      stopAutoScroll();
+      moveToPrevSlide();
+      startAutoScroll();
+    });
+
+    // Pause on Hover Functional Bindings
+    viewportFrame.addEventListener('mouseenter', stopAutoScroll);
+    viewportFrame.addEventListener('mouseleave', startAutoScroll);
+
+    // Initial Engine Startup Activation Call
+    startAutoScroll();
+  }
+
 });
