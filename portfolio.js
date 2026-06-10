@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     widgetContainer.classList.remove('menu-is-active');
   });
 
-  /* ── LUXURY AUTO-SCROLL PAUSE-ON-HOVER SLIDER MODULE ── */
+  /* ── LUXURY AUTO-SCROLL INFINITE LOOP SLIDER MODULE ── */
   const track = document.querySelector('.luxury-slider-track');
   const slides = document.querySelectorAll('.luxury-slide-item');
   const prevBtn = document.querySelector('.prev-btn');
@@ -175,24 +175,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewportFrame = document.querySelector('.luxury-slider-viewport');
   
   if (track && slides.length > 0) {
-    let currentIndex = 0;
-    const maxSlides = slides.length;
+    const originalCount = slides.length;
+    
+    // 1. Clone first and last slides for seamless infinite loop trick
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[originalCount - 1].cloneNode(true);
+    
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+    
+    // Adjust index baseline because of the added prepended clone
+    let currentIndex = 1; 
     let autoScrollInterval = null;
-    const scrollIntervalDuration = 4000; // Time step before advancing slide automatically (4s)
+    const scrollIntervalDuration = 2500; 
+ 
+    
+    // Initialize starting position quietly on the real Slide 1
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Main translate transition executor function
-    const updateSliderPosition = () => {
+    const updateSliderPosition = (animate = true) => {
+      if (animate) {
+        track.style.transition = 'transform 0.75s cubic-bezier(0.25, 1, 0.35, 1)'; // Smooth fluid spring ease
+      } else {
+        track.style.transition = 'none';
+      }
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
     };
 
+    // 2. Handle clone jump checkpoints silently behind the scenes
+    track.addEventListener('transitionend', () => {
+      if (currentIndex === originalCount + 1) {
+        // Snapped onto trailing clone -> teleport instantly to real Slide 1
+        currentIndex = 1;
+        updateSliderPosition(false);
+      } else if (currentIndex === 0) {
+        // Snapped onto leading clone -> teleport instantly to real Slide 3
+        currentIndex = originalCount;
+        updateSliderPosition(false);
+      }
+    });
+
     const moveToNextSlide = () => {
-      currentIndex = (currentIndex + 1) % maxSlides;
-      updateSliderPosition();
+      if (currentIndex > originalCount) return; // Guard clause against double-clicks
+      currentIndex++;
+      updateSliderPosition(true);
     };
 
     const moveToPrevSlide = () => {
-      currentIndex = (currentIndex - 1 + maxSlides) % maxSlides;
-      updateSliderPosition();
+      if (currentIndex <= 0) return;
+      currentIndex--;
+      updateSliderPosition(true);
     };
 
     // Engine Timer Management Controls
@@ -209,11 +242,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Explicit Action Event Hooks
+    // Explicit Button Click Action Event Hooks
     nextBtn.addEventListener('click', () => {
       stopAutoScroll();
       moveToNextSlide();
-      startAutoScroll(); // Safely cycle interval loop timer context back up
+      startAutoScroll(); 
     });
 
     prevBtn.addEventListener('click', () => {
